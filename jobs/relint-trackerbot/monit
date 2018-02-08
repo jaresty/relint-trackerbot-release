@@ -1,0 +1,6 @@
+check process relint-trackerbot
+  with pidfile /var/vcap/sys/run/bpm/relint-trackerbot/relint-trackerbot.pid
+  start program "/var/vcap/jobs/bpm/bin/bpm start relint-trackerbot"
+  stop program "/var/vcap/jobs/bpm/bin/bpm stop relint-trackerbot"
+  group vcap
+

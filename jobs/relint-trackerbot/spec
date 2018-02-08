@@ -1,0 +1,29 @@
+---
+name: relint-trackerbot
+
+templates:
+  bpm.yml.erb: config/bpm.yml
+  config.yml.erb: config/config.yml
+
+packages:
+- relint-trackerbot
+
+properties:
+  config:
+    description: Configure ignoring and renaming of builds
+    example:
+      ignore:
+      - .*pool.*
+      - run-unit-tests-on-all-cf-deployment-prs
+      groups:
+      a1.upgrade.cf-release.aws:
+      - cf-release-.*aws.*
+    default: {}
+  tracker_project_id:
+    description: Project to open stories in
+  tracker_api_token:
+    description: Token with access to the project below
+  concourse_host:
+    description: Concourse you want to check for broken builds
+  concourse_team:
+    default: main

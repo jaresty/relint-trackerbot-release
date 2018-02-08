@@ -1,0 +1,8 @@
+---
+name: relint-trackerbot
+
+dependencies:
+- golang-1.9-linux
+
+files:
+- relint-trackerbot/**/*

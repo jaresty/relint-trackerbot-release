@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eux
+
+source /var/vcap/packages/golang-1.9-linux/bosh/compile.env
+import=src/github.com/pivotal-cf-experimental
+
+mkdir -p $import
+mv relint-trackerbot $import
+
+mkdir ${BOSH_INSTALL_TARGET}/bin
+go build -o ${BOSH_INSTALL_TARGET}/bin/relint-trackerbot $import/relint-trackerbot/main.go

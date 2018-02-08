@@ -1,0 +1,17 @@
+<%= {
+    processes: [{
+      name: "relint-trackerbot",
+      executable: "/var/vcap/packages/relint-trackerbot/bin/relint-trackerbot",
+      args: [
+        "--config-file",
+        "/var/vcap/jobs/relint-trackerbot/config/config.yml",
+      ],
+      env: {
+        CONCOURSE_HOST: p('concourse_host'),
+        CONCOURSE_TEAM: p('concourse_team'),
+        TRACKER_API_TOKEN: p('tracker_api_token'),
+        TRACKER_PROJECT_ID: p('tracker_project_id'),
+      }
+    }]
+  }.to_yaml
+%>
