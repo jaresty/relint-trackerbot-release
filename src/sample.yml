@@ -32,8 +32,12 @@ instance_groups:
     release: relint-trackerbot
     properties:
       concourse_host: ((concourse_host))
+      concourse_team: ((concourse_team))
       tracker_api_token: ((tracker_api_token))
       tracker_project_id: ((tracker_project_id))
+      config:
+        ignore: []
+        groups: {}
   vm_type: default
   stemcell: default
   persistent_disk: 10240
